@@ -1,9 +1,12 @@
 CC = c++
-CFLAGS = -std=c++98 -Wall -Werror -Wextra
-NAME = megaphone
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -g
+NAME = phonebook
 
-SOURCES 	:=	megaphone.cpp
-				
+SOURCES 	:=	main.cpp\
+				phonebook.cpp\
+				contact.cpp\
+
+INCLUDES	:=	
 SOURCE_DIR 	:=	./
 OBJECTS_DIR	:=	objects
 OBJECTS 	:= 	$(addprefix $(OBJECTS_DIR)/, $(SOURCES:.cpp=.o))
@@ -11,11 +14,11 @@ OBJECTS 	:= 	$(addprefix $(OBJECTS_DIR)/, $(SOURCES:.cpp=.o))
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
-	@$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $^
 
 $(OBJECTS_DIR)/%.o: $(SOURCE_DIR)/%.cpp
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c -o $@ $<
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(INCLUDES) -c -o $@ $<
 
 clean:
 		rm -f $(OBJECTS)
