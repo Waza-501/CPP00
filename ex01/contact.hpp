@@ -1,6 +1,8 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
+# include <string>
+
 class contact
 {
 	private:
@@ -13,9 +15,9 @@ class contact
 			contact();
 			~contact();
 			int			idx;
-			void		print_list();
-			void		print_contact();
-			void		add_contact();
+			void		print_list(void);
+			void		print_contact(void);
+			void		add_contact(void);
 			bool		used;
 };
 

@@ -6,12 +6,11 @@
 phonebook::phonebook()
 {
 	int		idx;
-	int		num;
 
 	idx = 0;
 	while (idx < 8)
 	{
-		contact[idx].used = false;
+		contact[idx].hasinfo = false;
 		idx++;
 	}
 }
@@ -28,12 +27,15 @@ int		contact_number(int num)
 
 }
 
-void	phonebook::add_contact()
+void	phonebook::add_contact(void)
 {
 	contact_nbr = contact_number(contact_nbr);
 	contact[contact_nbr].add_contact();
+	contact_nbr++;
+	std::cout << "Contact added!" << std::endl;
 }
 
-void	phonebook::search_contact()
+void	phonebook::search_contact(void)
 {
+
 }

@@ -27,10 +27,11 @@ int	main(void)
 		std::cout << "~ADD~   ~SEARCH~   ~EXIT~" << std::endl;
 		std::getline(std::cin, input_string);
 		if (input_string == "ADD" || input_string == "add")
-			std::cout << "You picked ADD" << std::endl;
-			//phbook.
+			//std::cout << "You picked ADD" << std::endl;
+			phbook.add_contact();
 		else if (input_string == "SEARCH" || input_string == "search")
 			std::cout << "You picked SEARCH" << std::endl;
+			//phbook.search_contact();
 		else if (input_string == "EXIT" || input_string == "exit")
 			break;
 		else

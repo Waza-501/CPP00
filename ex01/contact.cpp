@@ -10,25 +10,26 @@ contact::~contact()
 {
 }
 
-void	print_list()
+void	contact::print_list(void)
 {
 
 }
 
-void	print_contact()
+void	contact::print_contact(void)
 {
 
 }
 
-std::string	get_info()
+std::string	get_info(void)
 {
 	std::string		info;
 
 	std::getline(std::cin, info);
+	//std::cout << "info found" << std::endl;
 	return (info);
 }
 
-void	add_contact()
+void	contact::add_contact(void)
 {
 	std::cout << "Please enter your first name" << std::endl;
 	fname = get_info();
@@ -37,8 +38,8 @@ void	add_contact()
 	std::cout << "Please enter your nickname" << std::endl;
 	nickname = get_info();
 	std::cout << "Please enter your phone number" << std::endl;
-	phonemum = get_info();
+	phonenum = get_info();
 	std::cout << "Please enter your darkest secret" << std::endl;
-	secret = get_info();
-
+	darksecret = get_info();
+	hasinfo = true;
 }
